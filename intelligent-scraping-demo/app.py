@@ -46,12 +46,12 @@ def scrape_links_from_site(company, url):
     print(f"finding links from {url}...")
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
-    links = [
-        a["href"] for a in soup.find_all("a", href=True)
-    ]  
+    links = [a["href"] for a in soup.find_all("a", href=True)]
     filtered_links = [
         i for i in links if (not i.startswith("//") and i.count("/") > 1)
-    ][:50] # Limit links to 50 to stay within token limits
+    ][
+        :50
+    ]  # Limit links to 50 to stay within token limits
 
     # Define prompt for selecting top 3 from the list of URLs
     prompt = """
