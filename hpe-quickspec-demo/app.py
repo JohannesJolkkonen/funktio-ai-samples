@@ -65,7 +65,7 @@ def main():
     if "vectorstore" not in st.session_state:
         st.session_state.vectorstore = None
 
-    st.header("Chat with ")
+    st.header("Chat With QuickSpecs")
     user_question = st.text_input("Ask a question about your product sheets:")
     if user_question and st.session_state.vectorstore:
         try:
@@ -73,7 +73,7 @@ def main():
         except Exception as e:
             print(f"Exception {e}")
     elif user_question:
-        exception = "Please upload some product sheets using the sidebar!"
+        exception = "Please upload and process some product sheets using the sidebar!"
         st.write(bot_template.replace("{{MSG}}", exception), unsafe_allow_html=True)
 
     with st.sidebar:
