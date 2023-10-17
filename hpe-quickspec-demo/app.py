@@ -46,7 +46,7 @@ def get_conversation_chain(vectorstore):
 def handle_userinput(user_question):
     response = st.session_state.conversation({'question': user_question})
     st.session_state.chat_history = response['chat_history']
-    for i, message in enumerate(st.session_state.chat_history):
+    for i, message in reversed(list(enumerate(st.session_state.chat_history))):
         if i % 2 == 0:
             st.write(user_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
         else:
@@ -54,7 +54,7 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="HPE QuickSpec Knowledgebase", page_icon=":books:")
+    st.set_page_config(page_title="HPE QuickSpec LLM-Demo", page_icon="https://yt3.googleusercontent.com/g7JWbHh0bzCiDFtfvq86-9Ro8yFNM6TESGJVhSB58a_aTrhLAkN9YTeSx_X156n5cRAMcrO_Q4c=s176-c-k-c0x00ffffff-no-rj-mo")
 
     st.write(css, unsafe_allow_html=True)
     
@@ -62,23 +62,26 @@ def main():
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
+    if "vectorstore" not in st.session_state:
+        st.session_state.vectorstore = None
 
     st.header("Chat with ")
     user_question = st.text_input("Ask a question about your product sheets:")
-    if user_question:
+    if user_question and st.session_state.vectorstore:
         try:
             handle_userinput(user_question)
         except Exception as e:
-            exception = "Please upload some product sheets before asking questions."
-            st.write(bot_template.replace("{{MSG}}", exception), unsafe_allow_html=True)
-
+            print(f"Exception {e}")
+    elif user_question:
+        exception = "Please upload some product sheets using the sidebar!"
+        st.write(bot_template.replace("{{MSG}}", exception), unsafe_allow_html=True)
 
     with st.sidebar:
-        st.subheader("Your documnets")
+        st.subheader("Your documents")
         pdf_docs = st.file_uploader(
             "Upload your product sheets and click 'Process'", accept_multiple_files=True
         )
-        if st.button("Process"):
+        if st.button("Process files"):
             with st.spinner("Processing files"):
                 # get pdf text
                 raw_text = get_pdf_text(pdf_docs)
@@ -87,10 +90,10 @@ def main():
                 text_chunks = get_text_chunks(raw_text)
 
                 # Create vector store
-                vectorstore = get_vectorstore(text_chunks)
+                st.session_state.vectorstore = get_vectorstore(text_chunks)
                 
                 # Create conversation chain
-                st.session_state.conversation = get_conversation_chain(vectorstore)
+                st.session_state.conversation = get_conversation_chain(st.session_state.vectorstore)
 
 
 if __name__ == '__main__':
