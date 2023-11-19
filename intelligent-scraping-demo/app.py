@@ -143,10 +143,10 @@ def main(json_obj):
         client["news"] = content
         new_clients.append(client)
 
-    with open("intelligent-scraping-demo/data/clients_with_news.json", "w") as f:
+    with open("data/clients_with_news.json", "w") as f:
         json.dump(new_clients, f, indent=4)
 
 
-with open("intelligent-scraping-demo/data/clients.json", "r") as f:
+with open("data/clients.json", "r") as f:
     json_obj = json.load(f)
     main(json_obj=json_obj)
