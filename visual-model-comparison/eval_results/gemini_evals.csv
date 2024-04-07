@@ -1,0 +1,41 @@
+question,ground_truth,answer,latencies,token_usage,answer_correctness
+"What is our projected revenue for 2018, and are we profitable?","The projected revenue for 2018 is $4,800,000. The image includes a break-even point at the 3rd year, indicating that the company is projected to be profitable by 2018."," The projected revenue for 2018 is $4,800,000. The company is not yet profitable as the break-even point is projected for 2019.",2.9327355000423267,317,0.6138486527098398
+"Give me the complete nutritional facts, grams and % daily value","Calories 25
+Total Fat 0g 0%
+Sodium 0mg 0%
+Total Carbohydrate 7g 3%
+Dietary Fiber 2g 7%
+Total Sugars 5g 8%
+Protein 0g 0%"," **Nutrition Facts**
+
+Serving Size: 1 Can (12 fl oz)
+
+**Amount per Serving**
+Calories: 25
+Total Fat: 0g (0%)
+Sodium: 0mg (0%)
+Total Carbohydrates: 7g (3%)
+Dietary Fiber: 2g (7%)
+Total Sugars: 5g (8%)
+Includes 4g Added Sugars
+Protein: 0g (0%)
+
+Not a significant source of saturated fat, trans fat, cholesterol, fiber, vitamin D, calcium, iron, and potassium.",3.9119642000296153,393,0.9197096340634765
+Which two actors had the most movies in common?,"The two actors who had the most movies in common were Keanu Reeves and Laurence Fishburne. They both starred in four movies together: The Matrix, The Matrix Reloaded and The Matrix Revolutions"," The two actors who had the most movies in common were Keanu Reeves and Laurence Fishburne. They both starred in four movies together: The Matrix, The Matrix Reloaded, The Matrix Revolutions, and Johnny Mnemonic.",3.0918004999984987,313,0.7447023068029949
+Who are the two famous people in this image?,"Lex Fridman, a podcaster, and Yann Lecun, an AI scientist"," The two famous people in the image are:
+
+- Elon Musk - CEO of Tesla and SpaceX
+- Lex Fridman - AI researcher and podcast host",2.854355899966322,298,0.5182957317552626
+What concept is explained in this diagram?,Latent Dirichlet Allocation (LDA), Latent Dirichlet Allocation (LDA),2.866266800032463,272,0.9882508942582935
+"What is the cheapest item, and the most expensive item in this picture?","The cheapest item in the picture is the 'Renova Rollo de Cocina, 3 Unidades (Paquete de 1)' for 3,45 €. The most expensive item in the picture is the 'Proteína Sin Lactosa de HSN | Sin Sabor 500 g' for 22,90 €."," The cheapest item is the ""Renova Rollo de Cocina, 3 Unidades (Paquete de 1)"" which costs 3.45€. The most expensive item is the ""Proteína Sin Lactosa de HSN | Sin Sabor 500 g ="" which costs 22.90€.",3.8782121000112966,336,0.99390393962971
+What's the license of the main car in the image?,The license is 'CL10760'., The license of the main car in the image is CL1L760.,3.3285624000127427,288,0.7170021863206897
+What does the text say in the longest billboard in the image?,The billboard reads 'Madame Tussauds'., Madame Tussauds,2.7751982000190765,276,0.9743351024405421
+What concept is explained in this diagram?,"The diagram describes 'triplet loss', a technique used to train a neural network to group similar images together and separate dissimilar ones. It does this by minimizing the distance between images of the same identity and maximizing the distance between images of different identities."," The diagram explains the concept of contrastive loss, which is a loss function used in metric learning. 
+
+Metric learning aims to learn a distance metric between data points such that similar data points are close together and dissimilar data points are far apart. Contrastive loss is a type of metric learning loss function that is specifically designed to maximize the distance between dissimilar data points and minimize the distance between similar data points.
+
+In contrastive loss, we have three inputs: a positive pair, an anchor, and a negative pair. The positive pair consists of two similar data points, while the negative pair consists of two dissimilar data points. The goal of the contrastive loss function is to learn a distance metric such that the distance between the anchor and the positive pair is small, while the distance between the anchor and the negative pair is large.
+
+The diagram shows how contrastive loss is calculated. The anchor, positive, and negative data points are first encoded into a feature space using an encoder network. The distance between the anchor and the positive pair is then calculated using a distance function. The distance between the anchor and the negative pair is also calculated using the distance function. The contrastive loss is then calculated as the difference between the distance between the anchor and the positive pair and the distance between the anchor and the negative pair.
+
+Contrastive loss is a powerful loss function for metric learning. It is simple to implement and can be used with various data types. Contrastive loss has been successfully used in many applications, such as face recognition, object recognition, and natural language processing.",5.207717199984472,582,0.6882751722746503

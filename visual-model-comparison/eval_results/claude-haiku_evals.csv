@@ -1,0 +1,49 @@
+question,ground_truth,answer,latencies,token_usage,answer_correctness
+"What is our projected revenue for 2018, and are we profitable?","The projected revenue for 2018 is $4,800,000. The image includes a break-even point at the 3rd year, indicating that the company is projected to be profitable by 2018.","According to the financial projections shown in the image, the projected revenue for 2018 is $9,600,000. However, the image does not provide explicit information about whether the company is projected to be profitable in 2018. The information given focuses on the revenue projections, but does not include details about expenses or net income. To determine if the company is projected to be profitable in 2018, additional financial information would be needed.",2.4018584999721497,632,0.4535354582458152
+"Give me the complete nutritional facts, grams and % daily value","Calories 25
+Total Fat 0g 0%
+Sodium 0mg 0%
+Total Carbohydrate 7g 3%
+Dietary Fiber 2g 7%
+Total Sugars 5g 8%
+Protein 0g 0%","The complete nutrition facts for the Orange Prebiotic Soda drink are as follows:
+
+Serving Size: 1 Can (12 fl oz)
+
+Calories: 25
+Total Fat: 0g (0% DV)
+Sodium: 0mg (0% DV) 
+Total Carbohydrate: 7g (3% DV)
+Dietary Fiber: 2g (7% DV)
+Total Sugars: 5g
+Includes 4g Added Sugars (8% DV)
+Protein: 0g
+
+This prebiotic soda contains 7% juice and is made with sparkling water, organic cane sugar, orange juice concentrate, organic apple cider vinegar, organic agave inulin, and natural flavors including lemon juice concentrate.",4.401757899962831,1808,0.8649022350581441
+Which two actors had the most movies in common?,"The two actors who had the most movies in common were Keanu Reeves and Laurence Fishburne. They both starred in four movies together: The Matrix, The Matrix Reloaded and The Matrix Revolutions","Based on the information provided in the image, the two actors who appear to have the most connections or relationships are Laurence Fishburne and The Matrix. The image shows that Laurence Fishburne ""Acted in"" The Matrix, and The Matrix ""Acted in"" Laurence Fishburne, indicating a strong connection between these two entities.",2.3834100000094622,1553,0.4769050460433716
+Who are the two famous people in this image?,"Lex Fridman, a podcaster, and Yann Lecun, an AI scientist","The image does not contain any identifying information about the individuals shown. It appears to depict two men, one wearing a suit and tie and the other wearing glasses, in what seems to be a technology or computer-related setting, with futuristic holographic displays in the background. Without being able to identify the specific individuals, I can only describe what I see in the image without naming or identifying the people.",2.596704200026579,1378,0.19747935767888594
+What concept is explained in this diagram?,Latent Dirichlet Allocation (LDA),"This diagram appears to be explaining the process of topic modeling, which is a technique used in text mining and natural language processing to identify the main themes or topics within a collection of text documents.
+
+The key elements of the topic modeling process shown in the diagram are:
+
+1. Collection of text documents (dataset)
+2. Document-topic distribution, which assigns each document to one or more topics
+3. Observed Word-topic assignment, which associates words in the documents with the identified topics
+4. Frequency of topics per document, which shows the relative importance or prevalence of each topic across the document set
+5. Creation of topics, which is the final output of the topic modeling process, identifying the main themes or concepts present in the text corpus.
+
+So in summary, this diagram illustrates the core components and workflow of a topic modeling algorithm, which is a common technique used in text analysis and information retrieval.",3.820604700013064,720,0.7008212063690122
+"What is the cheapest item, and the most expensive item in this picture?","The cheapest item in the picture is the 'Renova Rollo de Cocina, 3 Unidades (Paquete de 1)' for 3,45 €. The most expensive item in the picture is the 'Proteína Sin Lactosa de HSN | Sin Sabor 500 g' for 22,90 €.","The cheapest item in the picture is the Urtekram Bio9 Toothpaste Organic, Fresh Mint, 75 ml, which is priced at 4.37€.
+
+The most expensive item in the picture is the Renova Rollo de Cocina, 3 Unidades (Paquete de 1), which is priced at 12.85€.",3.0769846999901347,1763,0.7238270146995607
+What's the license of the main car in the image?,The license is 'CL10760'.,The license plate of the main car in the image is C 10760.,2.244490200013388,1677,0.7233164540983318
+What does the text say in the longest billboard in the image?,The billboard reads 'Madame Tussauds'.,"The longest billboard in the image says ""MADAME TUSSAUDS"".",1.5370144000044093,1010,0.7391516081879494
+What concept is explained in this diagram?,"The diagram describes 'triplet loss', a technique used to train a neural network to group similar images together and separate dissimilar ones. It does this by minimizing the distance between images of the same identity and maximizing the distance between images of different identities.","This diagram appears to be explaining the concept of an autoencoder, which is a type of neural network used for unsupervised learning and data compression. The key components shown in the diagram are:
+
+1. Encoder: This takes the input data (the images) and encodes them into a compressed representation or latent space, represented by the variable θ.
+
+2. Decoder: This takes the encoded representation θ and tries to reconstruct the original input data.
+
+3. Distance Function: This compares the reconstructed output f'(x) to the original input x, and tries to minimize the distance between them.
+
+The diagram also shows that the autoencoder can be used for both minimizing the distance (for data compression) and maximizing the distance (for anomaly detection). The three sample images provided illustrate the types of inputs the autoencoder might work with, such as facial images.",3.6867465000250377,992,0.3622879274772775

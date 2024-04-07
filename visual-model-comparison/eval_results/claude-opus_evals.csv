@@ -1,0 +1,42 @@
+question,ground_truth,answer,latencies,token_usage,answer_correctness
+"What is our projected revenue for 2018, and are we profitable?","The projected revenue for 2018 is $4,800,000. The image includes a break-even point at the 3rd year, indicating that the company is projected to be profitable by 2018.","According to the financial projections shown in the image, the projected revenue for 2018 is $4,800,000.
+
+The image states ""Our financial projections are more than realistic"", suggesting the company is currently not profitable and these are forward-looking projections rather than actual results. The rapidly increasing revenue from $800,000 in 2015 to a projected nearly $5 million in 2018 implies the company is still in growth mode and likely investing heavily to acquire customers and scale, which is why profitability has likely not been achieved yet based on these optimistic future revenue projections.",11.714145899983123,663,0.42538534866925914
+"Give me the complete nutritional facts, grams and % daily value","Calories 25
+Total Fat 0g 0%
+Sodium 0mg 0%
+Total Carbohydrate 7g 3%
+Dietary Fiber 2g 7%
+Total Sugars 5g 8%
+Protein 0g 0%","According to the nutrition facts label on the orange prebiotic soda can, the complete nutritional information per 12 fl oz (1 can) serving is:
+
+Calories: 25
+% Daily Value*
+Total Fat 0g: 0%
+Sodium 0mg: 0%
+Total Carbohydrate 7g: 3%
+  Includes 4g Added Sugars: 8%
+Dietary Fiber 2g: 7%
+Total Sugars 5g
+Protein 0g: 0%
+
+Not a significant source of saturated fat, trans fat, cholesterol, fiber, vitamin D, calcium, iron, and potassium.
+
+*The % Daily Value tells you how much a nutrient in a serving of food contributes to a daily diet, based on a 2,000 calorie diet.",12.916208200040273,1811,0.767066408152911
+Which two actors had the most movies in common?,"The two actors who had the most movies in common were Keanu Reeves and Laurence Fishburne. They both starred in four movies together: The Matrix, The Matrix Reloaded and The Matrix Revolutions","Based on the network diagram showing which actors have acted together in various movies, Keanu Reeves and Laurence Fishburne have the most shared movie connections, appearing together in Something..., Johnny Mnemo..., and The Matrix Reloa...",7.964302600012161,1526,0.83488487135607
+Who are the two famous people in this image?,"Lex Fridman, a podcaster, and Yann Lecun, an AI scientist","The image shows two men looking intently at a digital display with code or data visualizations on it. One man is wearing a suit and tie while the other has on glasses and more casual attire. The code display gives an impression they may be analyzing or discussing some kind of technical or computational work. I apologize, but I'm not able to identify the specific individuals shown. Let me know if you would like me to describe any other aspects of the image though!",9.512609000026714,1385,0.19862710838373032
+What concept is explained in this diagram?,Latent Dirichlet Allocation (LDA),"This diagram illustrates the concept of Topic Modeling, specifically using the Latent Dirichlet Allocation (LDA) approach.
+
+It shows a dataset of text documents being processed to discover the latent topics present across the collection. The document-topic distribution matrix represents the probability of each document belonging to each discovered topic. The word-topic assignment shows which words are most associated with or representative of each topic.
+
+The diagram also indicates that hyperparameters like the number of topics (1-4 here) and frequency of topics per document (the colored bars) are part of specifying the LDA topic model.
+
+So in summary, it provides an overview of how unsupervised topic modeling using LDA can uncover the hidden thematic structure and key topics from a set of textual documents.",12.793429800018203,695,0.9163140449772726
+"What is the cheapest item, and the most expensive item in this picture?","The cheapest item in the picture is the 'Renova Rollo de Cocina, 3 Unidades (Paquete de 1)' for 3,45 €. The most expensive item in the picture is the 'Proteína Sin Lactosa de HSN | Sin Sabor 500 g' for 22,90 €.","The cheapest item shown in the image is the Urtekram Bio9 Toothpaste Organic, Fresh Mint, 75 ml priced at 4,37€. The most expensive item is the Renova Rollo de Cocina, 3 Unidades (Paquete de 1) priced at 16€ (currently available on February 27 according to the listing).",10.051773399987724,1761,0.7226669065306233
+What's the license of the main car in the image?,The license is 'CL10760'.,The license plate of the main white Waymo self-driving car in the image is CL10760.,6.004070100025274,1679,0.7173958366524915
+What does the text say in the longest billboard in the image?,The billboard reads 'Madame Tussauds'.,"The longest billboard in the image says ""MADAME TUSSAUDS"".",6.462728399957996,1005,0.7391516081879494
+What concept is explained in this diagram?,"The diagram describes 'triplet loss', a technique used to train a neural network to group similar images together and separate dissimilar ones. It does this by minimizing the distance between images of the same identity and maximizing the distance between images of different identities.","This diagram illustrates the concept of contrastive learning, specifically using a triplet loss function. The goal is to learn an embedding space where similar samples (the ""anchor"" and ""positive"" samples) are mapped close together, while dissimilar samples (the ""anchor"" and ""negative"" samples) are pushed apart.
+
+The encoder network θ maps the input images to an embedding space. The loss functions aim to minimize the distance between the anchor and positive embeddings f+ = θ(I+) while maximizing the distance between the anchor and negative embeddings f- = θ(I-).
+
+By training the encoder network to satisfy these distance constraints over many triplets of samples, it learns to generate an embedding space that meaningfully captures the similarity and differences between input images, without requiring explicit labels. This is a commonly used approach for representation learning and has applications in face recognition, image retrieval, and unsupervised visual understanding.",16.850953900022432,993,0.8030478382446049
