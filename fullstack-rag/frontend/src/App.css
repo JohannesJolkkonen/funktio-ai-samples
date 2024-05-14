@@ -1,0 +1,125 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.main-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.form-button {
+  padding: 10px 20px;
+  margin: 15px 0 0 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.loader-container {
+  margin-top: 10px;
+}
+
+.expander {
+  border: 2px solid #3498db;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius:5px
+}
+
+.expander-title {
+  cursor: pointer;;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+}
+
+.expander-content {
+  padding: 10px 10px 10px 10px;
+  text-align: left;
+}
+
+.results-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 100%
+}
+
+.results-documents {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  width: 50%;
+}
+
+.results-answer {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  text-align: left;
+  width: 50%;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
