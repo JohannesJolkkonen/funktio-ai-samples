@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import WebBaseLoader
 
 from qdrant_client import QdrantClient, models
-
+from .openai_utils import get_embedding
 from decouple import config
 
 qdrant_api_key = config("QDRANT_API_KEY")
@@ -38,6 +38,9 @@ def create_collection(collection_name):
     print(f"Collection {collection_name} created successfully")
 
 def upload_website_to_collection(url:str):
+    if not client.collection_exists(collection_name=collection_name):
+        create_collection(collection_name)
+        
     loader = WebBaseLoader(url)
     docs = loader.load_and_split(text_splitter)
     for doc in docs:
@@ -45,6 +48,17 @@ def upload_website_to_collection(url:str):
     
     vector_store.add_documents(docs)
     return f"Successfully uploaded {len(docs)} documents to collection {collection_name} from {url}"
+
+
+def qdrant_search(query: str):
+    vector_search = get_embedding(query)
+    docs = client.search(
+        collection_name=collection_name,
+        query_vector=vector_search,
+        limit=4
+    )
+    return docs
+
 
 # create_collection(collection_name)
 # upload_website_to_collection("https://hamel.dev/blog/posts/evals/")
