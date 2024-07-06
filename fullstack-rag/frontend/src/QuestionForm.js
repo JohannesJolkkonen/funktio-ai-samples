@@ -4,7 +4,7 @@ import { BounceLoader } from 'react-spinners';
 import ReactMarkdown from 'react-markdown';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000'
+    baseURL: 'https://backend-blue-two.vercel.app'
 })
 
 const Expander = ({ title, content, source }) => {
@@ -13,7 +13,7 @@ const Expander = ({ title, content, source }) => {
         <div className="expander">
             <b onClick={() => setIsOpen(!isOpen)} className="expander-title">{title}</b>
             {isOpen && <p className="expander-content">{content}</p>}
-            {isOpen && <p className="expander-content">Source:{source}</p>}
+            {isOpen && <p className="expander-content">Source: <a href={source} target="_blank" rel="noopener noreferrer">{source}</a></p>}
         </div>
     );
 };
@@ -24,15 +24,43 @@ function QuestionForm() {
     const [documents, setDocuments] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
+    // const handleSubmit = async (e) => {
+    //     setAnswer('');
+    //     setIsLoading(true);
+    //     e.preventDefault();
+    //     console.log("Your question: ", question);
+    //     console.log("Calling backend at ", api.defaults.baseURL)
+    //     const response = await api.post('/chat', { message: question });
+    //     setAnswer(response.data.answer);
+
+    //     setDocuments(response.data.documents)
+    //     setIsLoading(false);
+    // }
+
     const handleSubmit = async (e) => {
         setAnswer('');
         setIsLoading(true);
         e.preventDefault();
-        console.log("Your question: ", question);
-        const response = await api.post('/chat', { message: question });
-        setAnswer(response.data.answer);
-        setDocuments(response.data.documents)
-        setIsLoading(false);
+
+        const websocket = new WebSocket('wss://johannesjolkkonen--rag-backend-endpoint.modal.run/async_chat');
+
+        websocket.onopen = () => {
+            websocket.send(question);
+        }
+
+        websocket.onmessage = (event) => {
+            console.log("Received event: ", event.data);
+            const data = JSON.parse(event.data);
+            if (data.event_type == 'on_retriever_end') {
+                setDocuments(data.content);
+            } else if (data.event_type == 'on_chat_model_stream') {
+                setAnswer(prev => prev + data.content);
+            }
+        }
+
+        websocket.onclose = (event) => {
+            setIsLoading(false);
+        }
     }
 
     const handleIndexing = async(e) => {
